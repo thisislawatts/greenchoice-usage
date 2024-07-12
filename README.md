@@ -1,4 +1,4 @@
-# GreenChoice Scraper
+# GreenChoice Usage
 
 ## Overview
 
@@ -6,8 +6,7 @@ This script automates the process of logging into the GreenChoice website, extra
 
 ## Prerequisites
 
-- Node.js installed
-- npm (Node Package Manager) installed
+- Node.js v22
 - A GreenChoice account with valid login credentials
 - Environment variables set for the user email, password
 
