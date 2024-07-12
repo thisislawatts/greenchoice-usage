@@ -1,0 +1,429 @@
+{
+  "interval": "day",
+  "start": "2024-07-09T00:00:00Z",
+  "end": "2024-07-13T00:00:00Z",
+  "entries": [
+    {
+      "productType": "electricity",
+      "unitType": "kWh",
+      "values": {
+        "2024-07-09T00:00:00+02:00": {
+          "consumptionHigh": 4.0,
+          "consumptionLow": 5.0,
+          "consumptionTotal": 9.0,
+          "costsHigh": 1.5053368,
+          "costsHighComponents": [
+            { "type": "afnameElektraHoogVast", "value": 0.80888 },
+            { "type": "energiebelastingElektraSalderen", "value": 0.4352 },
+            { "type": "btw", "value": 0.2612568 }
+          ],
+          "costsLow": 1.6467495,
+          "costsLowComponents": [
+            { "type": "afnameElektraLaagVast", "value": 0.81695 },
+            { "type": "energiebelastingElektraSalderen", "value": 0.544 },
+            { "type": "btw", "value": 0.2857995 }
+          ],
+          "costsFixed": -0.37373996,
+          "costsFixedComponents": [
+            { "type": "vastrechtElektraVast", "value": 0.211534 },
+            { "type": "netbeheerElektra", "value": 0.9053 },
+            { "type": "belastingvermindering", "value": -1.42571 },
+            { "type": "btw", "value": -0.06486396 }
+          ],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 2.77834634,
+          "status": "measured"
+        },
+        "2024-07-10T00:00:00+02:00": {
+          "consumptionHigh": 9.293,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 9.293,
+          "costsHigh": 3.4972737206,
+          "costsHighComponents": [
+            { "type": "afnameElektraHoogVast", "value": 1.87923046 },
+            { "type": "energiebelastingElektraSalderen", "value": 1.0110784 },
+            { "type": "btw", "value": 0.6069648606 }
+          ],
+          "costsLow": 0.0,
+          "costsLowComponents": [],
+          "costsFixed": -0.37373996,
+          "costsFixedComponents": [
+            { "type": "vastrechtElektraVast", "value": 0.211534 },
+            { "type": "netbeheerElektra", "value": 0.9053 },
+            { "type": "belastingvermindering", "value": -1.42571 },
+            { "type": "btw", "value": -0.06486396 }
+          ],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 3.1235337606,
+          "status": "measured"
+        },
+        "2024-07-11T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": null,
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": -0.37373996,
+          "costsFixedComponents": [
+            { "type": "vastrechtElektraVast", "value": 0.211534 },
+            { "type": "netbeheerElektra", "value": 0.9053 },
+            { "type": "belastingvermindering", "value": -1.42571 },
+            { "type": "btw", "value": -0.06486396 }
+          ],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": -0.37373996,
+          "status": "notMeasured"
+        },
+        "2024-07-12T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": null,
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": 0.0,
+          "costsFixedComponents": null,
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.0,
+          "status": "notMeasured"
+        }
+      },
+      "total": {
+        "consumptionHigh": 13.293,
+        "consumptionLow": 5.0,
+        "consumptionTotal": 18.293,
+        "costsHigh": 5.0026105206,
+        "costsHighComponents": [
+          { "type": "afnameElektraHoogVast", "value": 2.68811046 },
+          { "type": "energiebelastingElektraSalderen", "value": 1.4462784 },
+          { "type": "btw", "value": 0.8682216606 }
+        ],
+        "costsLow": 1.6467495,
+        "costsLowComponents": [
+          { "type": "afnameElektraLaagVast", "value": 0.81695 },
+          { "type": "energiebelastingElektraSalderen", "value": 0.544 },
+          { "type": "btw", "value": 0.2857995 }
+        ],
+        "costsFixed": -1.12121988,
+        "costsFixedComponents": [
+          { "type": "vastrechtElektraVast", "value": 0.634602 },
+          { "type": "netbeheerElektra", "value": 2.7159 },
+          { "type": "belastingvermindering", "value": -4.27713 },
+          { "type": "btw", "value": -0.19459188 }
+        ],
+        "costsVariableRedeliveryHigh": 0.0,
+        "costsVariableRedeliveryHighComponents": [],
+        "costsVariableRedeliveryLow": 0.0,
+        "costsVariableRedeliveryLowComponents": [],
+        "costsTotal": 5.5281401406,
+        "status": "measured"
+      }
+    },
+    {
+      "productType": "solar",
+      "unitType": "kWh",
+      "values": {
+        "2024-07-09T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": [
+            { "type": "afnameElektraHoogVast", "value": 0.0 },
+            { "type": "energiebelastingElektraSalderen", "value": 0.0 },
+            { "type": "btw", "value": 0.0 }
+          ],
+          "costsLow": 0.0,
+          "costsLowComponents": [
+            { "type": "afnameElektraLaagVast", "value": 0.0 },
+            { "type": "energiebelastingElektraSalderen", "value": 0.0 },
+            { "type": "btw", "value": 0.0 }
+          ],
+          "costsFixed": 0.0,
+          "costsFixedComponents": [],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.0,
+          "status": "measured"
+        },
+        "2024-07-10T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": [
+            { "type": "afnameElektraHoogVast", "value": 0.0 },
+            { "type": "energiebelastingElektraSalderen", "value": 0.0 },
+            { "type": "btw", "value": 0.0 }
+          ],
+          "costsLow": 0.0,
+          "costsLowComponents": [],
+          "costsFixed": 0.0,
+          "costsFixedComponents": [],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.0,
+          "status": "measured"
+        },
+        "2024-07-11T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": null,
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": 0.0,
+          "costsFixedComponents": [],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.0,
+          "status": "notMeasured"
+        },
+        "2024-07-12T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": null,
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": 0.0,
+          "costsFixedComponents": null,
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.0,
+          "status": "notMeasured"
+        }
+      },
+      "total": {
+        "consumptionHigh": 0.0,
+        "consumptionLow": 0.0,
+        "consumptionTotal": 0.0,
+        "costsHigh": 0.0,
+        "costsHighComponents": [
+          { "type": "afnameElektraHoogVast", "value": 0.0 },
+          { "type": "energiebelastingElektraSalderen", "value": 0.0 },
+          { "type": "btw", "value": 0.0 }
+        ],
+        "costsLow": 0.0,
+        "costsLowComponents": [
+          { "type": "afnameElektraLaagVast", "value": 0.0 },
+          { "type": "energiebelastingElektraSalderen", "value": 0.0 },
+          { "type": "btw", "value": 0.0 }
+        ],
+        "costsFixed": 0.0,
+        "costsFixedComponents": [],
+        "costsVariableRedeliveryHigh": 0.0,
+        "costsVariableRedeliveryHighComponents": [],
+        "costsVariableRedeliveryLow": 0.0,
+        "costsVariableRedeliveryLowComponents": [],
+        "costsTotal": 0.0,
+        "status": "measured"
+      }
+    },
+    {
+      "productType": "gas",
+      "unitType": "m3",
+      "values": {
+        "2024-07-09T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": [
+            { "type": "afnameGasVast", "value": 0.0 },
+            { "type": "energieBelastingGas", "value": 0.0 },
+            { "type": "btw", "value": 0.0 }
+          ],
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": 0.93125714,
+          "costsFixedComponents": [
+            { "type": "vastrechtGasVast", "value": 0.211534 },
+            { "type": "netbeheerGas", "value": 0.5581 },
+            { "type": "btw", "value": 0.16162314 }
+          ],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.93125714,
+          "status": "measured"
+        },
+        "2024-07-10T00:00:00+02:00": {
+          "consumptionHigh": 0.362,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.362,
+          "costsHigh": 0.5301925486,
+          "costsHighComponents": [
+            { "type": "afnameGasVast", "value": 0.22712604 },
+            { "type": "energieBelastingGas", "value": 0.21104962 },
+            { "type": "btw", "value": 0.0920168886 }
+          ],
+          "costsLow": 0.0,
+          "costsLowComponents": [],
+          "costsFixed": 0.93125714,
+          "costsFixedComponents": [
+            { "type": "vastrechtGasVast", "value": 0.211534 },
+            { "type": "netbeheerGas", "value": 0.5581 },
+            { "type": "btw", "value": 0.16162314 }
+          ],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 1.4614496886,
+          "status": "measured"
+        },
+        "2024-07-11T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": [
+            { "type": "afnameGasVast", "value": 0.0 },
+            { "type": "energieBelastingGas", "value": 0.0 },
+            { "type": "btw", "value": 0.0 }
+          ],
+          "costsLow": 0.0,
+          "costsLowComponents": [],
+          "costsFixed": 0.93125714,
+          "costsFixedComponents": [
+            { "type": "vastrechtGasVast", "value": 0.211534 },
+            { "type": "netbeheerGas", "value": 0.5581 },
+            { "type": "btw", "value": 0.16162314 }
+          ],
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.93125714,
+          "status": "notMeasured"
+        },
+        "2024-07-12T00:00:00+02:00": {
+          "consumptionHigh": 0.0,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 0.0,
+          "costsHigh": 0.0,
+          "costsHighComponents": null,
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": 0.0,
+          "costsFixedComponents": null,
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 0.0,
+          "status": "notMeasured"
+        }
+      },
+      "total": {
+        "consumptionHigh": 0.362,
+        "consumptionLow": 0.0,
+        "consumptionTotal": 0.362,
+        "costsHigh": 0.5301925486,
+        "costsHighComponents": [
+          { "type": "afnameGasVast", "value": 0.22712604 },
+          { "type": "energieBelastingGas", "value": 0.21104962 },
+          { "type": "btw", "value": 0.0920168886 }
+        ],
+        "costsLow": 0.0,
+        "costsLowComponents": [],
+        "costsFixed": 2.79377142,
+        "costsFixedComponents": [
+          { "type": "vastrechtGasVast", "value": 0.634602 },
+          { "type": "netbeheerGas", "value": 1.6743 },
+          { "type": "btw", "value": 0.48486942 }
+        ],
+        "costsVariableRedeliveryHigh": 0.0,
+        "costsVariableRedeliveryHighComponents": [],
+        "costsVariableRedeliveryLow": 0.0,
+        "costsVariableRedeliveryLowComponents": [],
+        "costsTotal": 3.3239639686,
+        "status": "measured"
+      }
+    },
+    {
+      "productType": "netConsumption",
+      "unitType": "euro",
+      "values": {
+        "2024-07-09T00:00:00+02:00": {
+          "consumptionHigh": 4.0,
+          "consumptionLow": 5.0,
+          "consumptionTotal": 9.0,
+          "costsHigh": 1.5053368,
+          "costsHighComponents": null,
+          "costsLow": 1.6467495,
+          "costsLowComponents": null,
+          "costsFixed": 0.55751718,
+          "costsFixedComponents": null,
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 3.70960348,
+          "status": "measured"
+        },
+        "2024-07-10T00:00:00+02:00": {
+          "consumptionHigh": 9.293,
+          "consumptionLow": 0.0,
+          "consumptionTotal": 9.293,
+          "costsHigh": 4.0274662692,
+          "costsHighComponents": null,
+          "costsLow": 0.0,
+          "costsLowComponents": null,
+          "costsFixed": 0.55751718,
+          "costsFixedComponents": null,
+          "costsVariableRedeliveryHigh": 0.0,
+          "costsVariableRedeliveryHighComponents": [],
+          "costsVariableRedeliveryLow": 0.0,
+          "costsVariableRedeliveryLowComponents": [],
+          "costsTotal": 4.5849834492,
+          "status": "measured"
+        }
+      },
+      "total": {
+        "consumptionHigh": 13.293,
+        "consumptionLow": 5.0,
+        "consumptionTotal": 18.293,
+        "costsHigh": 5.5328030692,
+        "costsHighComponents": [],
+        "costsLow": 1.6467495,
+        "costsLowComponents": [],
+        "costsFixed": 1.11503436,
+        "costsFixedComponents": [],
+        "costsVariableRedeliveryHigh": 0.0,
+        "costsVariableRedeliveryHighComponents": [],
+        "costsVariableRedeliveryLow": 0.0,
+        "costsVariableRedeliveryLowComponents": [],
+        "costsTotal": 8.2945869292,
+        "status": "measured"
+      }
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 import "dotenv/config";
 import puppeteer from "puppeteer";
 import { addDays, format, parse, subDays } from "date-fns";
+import debug from "debug";
+
+const logger = debug("greenchoice.scraper");
 
 // Configuration
 const USER_EMAIL = process.env.GC_USER_EMAIL;
@@ -13,14 +16,14 @@ const d = TARGET_DATE
   : subDays(new Date(), 1);
 
 console.log(
-  `🚀 Starting GreenChoice scraper for ${format(d, dateFormatString)}`
+  `🚀 Starting GreenChoice scraper for ${format(d, dateFormatString)}`,
 );
 
 let cookie = null;
 
 // Launch the browser and open a new blank page
 const browser = await puppeteer.launch({
-  headless: true,
+  headless: true, // Toggle this for debugging
 });
 
 const page = await browser.newPage();
@@ -44,20 +47,14 @@ page.on("request", (request) => {
 page.on("response", async (response) => {
   try {
     const requestHeaders = response.request().headers();
-    const responseHeaders = response.headers();
 
     // Check if the response is from an XHR request
     if (response.request().resourceType() === "xhr") {
-      //   console.log(`XHR URL: ${url}`);
+      logger(`XHR URL: ${response.request().url()}`);
 
       if (requestHeaders.cookie) {
-        // console.log(`Found cookie`);
+        logger(`Found cookie`, requestHeaders.cookie);
         cookie = requestHeaders.cookie;
-      }
-
-      // Extract cookies from the 'set-cookie' header, if present
-      if (responseHeaders["set-cookie"]) {
-        // console.log("Cookies:", cookies);
       }
     }
   } catch (error) {
@@ -72,38 +69,44 @@ await page.evaluate(() => {
 // Wait for the page to load
 await page.locator("text/Chloe").waitHandle();
 
-if (cookie) {
-  //   console.log(`Query API directly using captured cookie`);
-  const jsonBody = await fetchConsumptionData(d, cookie);
+if (!cookie) {
+  throw new Error("No cookie extracted from login. Unable to proceeed");
+}
 
-  const data = jsonBody.entries.find(
-    (entry) => entry.productType === "netConsumption"
-  );
+logger(`Query GreenChoice API directly using captured cookie`);
+const jsonBody = await fetchConsumptionData(
+  cookie,
+  subDays(d, 4),
+  addDays(d, 2),
+);
 
-  if (!data) {
-    throw new Error("No Net Consumption Product Type found");
-  }
+// Example of the data structure
+// is available in ./sample-consumption-data.json
+const data = jsonBody.entries.find(
+  (entry) => entry.productType === "netConsumption",
+);
 
-  for (const dayStampString in data.values) {
-    if (dayStampString.includes(format(d, dateFormatString))) {
-      // Yesterdays cost
-      const yesterdayCost = data.values[dayStampString].costsTotal;
-      const dayPrevious =
-        data.values[format(subDays(d, 1), dateFormatString) + "T00:00:00+02:00"]
-          .costsTotal;
+if (!data) {
+  throw new Error("No Net Consumption Product Type found");
+}
 
-      const comparison =
-        yesterdayCost > dayPrevious
-          ? "📈 This is more than the day before"
-          : "📉 This is less than the day before";
+for (const dayStampString in data.values) {
+  if (dayStampString.includes(format(d, dateFormatString))) {
+    // Yesterdays cost
+    const yesterdayCost = data.values[dayStampString].costsTotal;
+    const dayPrevious =
+      data.values[format(subDays(d, 1), dateFormatString) + "T00:00:00+02:00"]
+        .costsTotal;
 
-      console.log(
-        `Yesterday we spent ${formatMoney(
-          yesterdayCost
-        )} on electricity and gas.
-${comparison} (${formatMoney(dayPrevious)})`
-      );
-    }
+    const comparison =
+      yesterdayCost > dayPrevious
+        ? "📈 This is more than the day before"
+        : "📉 This is less than the day before";
+
+    console.log(
+      `Yesterday we spent ${formatMoney(yesterdayCost)} on electricity and gas.
+${comparison} (${formatMoney(dayPrevious)})`,
+    );
   }
 }
 
@@ -118,17 +121,18 @@ function formatMoney(num) {
     .replace("€", "€");
 }
 
-async function fetchConsumptionData(targetDate, authCookie) {
-  const start = format(subDays(targetDate, 4), dateFormatString);
-  const end = format(addDays(targetDate, 2), dateFormatString);
-  await fetch(
-    `https://mijn.greenchoice.nl/api/consumption?interval=day&start=${start}&end=${end}`,
+async function fetchConsumptionData(authCookie, start, end) {
+  const res = await fetch(
+    `https://mijn.greenchoice.nl/api/consumption?interval=day&start=${format(
+      start,
+      dateFormatString,
+    )}&end=${format(end, dateFormatString)}`,
     {
       headers: {
         accept: "application/json, text/plain, */*",
         cookie: authCookie,
       },
-    }
+    },
   );
 
   return await res.json();
