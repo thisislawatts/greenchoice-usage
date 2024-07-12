@@ -46,5 +46,5 @@ npm start
 The script uses the `debug` module for logging. To enable logging, set the `DEBUG` environment variable:
 
 ```sh
-DEBUG=greenchoice.scraper npm start
+DEBUG=greenchoice.usage npm start
 ```

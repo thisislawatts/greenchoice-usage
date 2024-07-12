@@ -3,7 +3,7 @@ import puppeteer from "puppeteer";
 import { addDays, format, parse, subDays } from "date-fns";
 import debug from "debug";
 
-const logger = debug("greenchoice.scraper");
+const logger = debug("greenchoice.usage");
 
 // Configuration
 const USER_EMAIL = process.env.GC_USER_EMAIL;
