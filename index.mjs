@@ -74,20 +74,7 @@ await page.locator("text/Chloe").waitHandle();
 
 if (cookie) {
   //   console.log(`Query API directly using captured cookie`);
-  const res = await fetch(
-    `https://mijn.greenchoice.nl/api/consumption?interval=day&start=${format(
-      subDays(d, 4),
-      dateFormatString
-    )}&end=${format(addDays(d, 2), dateFormatString)}`,
-    {
-      headers: {
-        accept: "application/json, text/plain, */*",
-        cookie,
-      },
-    }
-  );
-
-  const jsonBody = await res.json();
+  const jsonBody = await fetchConsumptionData(d, cookie);
 
   const data = jsonBody.entries.find(
     (entry) => entry.productType === "netConsumption"
@@ -126,5 +113,23 @@ function formatMoney(num) {
   return Intl.NumberFormat("nl-NL", {
     style: "currency",
     currency: "EUR",
-  }).format(num).replace("€", "€");
+  })
+    .format(num)
+    .replace("€", "€");
+}
+
+async function fetchConsumptionData(targetDate, authCookie) {
+  const start = format(subDays(targetDate, 4), dateFormatString);
+  const end = format(addDays(targetDate, 2), dateFormatString);
+  await fetch(
+    `https://mijn.greenchoice.nl/api/consumption?interval=day&start=${start}&end=${end}`,
+    {
+      headers: {
+        accept: "application/json, text/plain, */*",
+        cookie: authCookie,
+      },
+    }
+  );
+
+  return await res.json();
 }
