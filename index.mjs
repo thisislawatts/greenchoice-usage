@@ -16,7 +16,7 @@ const d = TARGET_DATE
   : subDays(new Date(), 1);
 
 console.log(
-  `🚀 Starting GreenChoice scraper for ${format(d, dateFormatString)}`
+  `🚀 Getting GreenChoice usage for ${format(d, dateFormatString)}`
 );
 
 let cookie = null;
