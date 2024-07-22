@@ -16,7 +16,7 @@ const d = TARGET_DATE
   : subDays(new Date(), 1);
 
 console.log(
-  `🚀 Starting GreenChoice scraper for ${format(d, dateFormatString)}`,
+  `🚀 Starting GreenChoice scraper for ${format(d, dateFormatString)}`
 );
 
 let cookie = null;
@@ -77,20 +77,26 @@ logger(`Query GreenChoice API directly using captured cookie`);
 const jsonBody = await fetchConsumptionData(
   cookie,
   subDays(d, 4),
-  addDays(d, 2),
+  addDays(d, 2)
 );
 
 // Example of the data structure
 // is available in ./sample-consumption-data.json
 const data = jsonBody.entries.find(
-  (entry) => entry.productType === "netConsumption",
+  (entry) => entry.productType === "netConsumption"
 );
 
 if (!data) {
   throw new Error("No Net Consumption Product Type found");
 }
 
+if (Object.values(data.values).length === 0) {
+  console.log(data);
+  throw new Error("No values found in the data");
+}
+
 for (const dayStampString in data.values) {
+  logger(`Checking ${dayStampString} includes ${format(d, dateFormatString)}`);
   if (dayStampString.includes(format(d, dateFormatString))) {
     // Yesterdays cost
     const yesterdayCost = data.values[dayStampString].costsTotal;
@@ -105,7 +111,7 @@ for (const dayStampString in data.values) {
 
     console.log(
       `Yesterday we spent ${formatMoney(yesterdayCost)} on electricity and gas.
-${comparison} (${formatMoney(dayPrevious)})`,
+${comparison} (${formatMoney(dayPrevious)})`
     );
   }
 }
@@ -122,18 +128,19 @@ function formatMoney(num) {
 }
 
 async function fetchConsumptionData(authCookie, start, end) {
-  const res = await fetch(
-    `https://mijn.greenchoice.nl/api/consumption?interval=day&start=${format(
-      start,
-      dateFormatString,
-    )}&end=${format(end, dateFormatString)}`,
-    {
-      headers: {
-        accept: "application/json, text/plain, */*",
-        cookie: authCookie,
-      },
+  const url = `https://mijn.greenchoice.nl/api/consumption?interval=day&start=${format(
+    start,
+    dateFormatString
+  )}&end=${format(end, dateFormatString)}`;
+
+  logger(`Fetching data from ${url}`);
+
+  const res = await fetch(url, {
+    headers: {
+      accept: "application/json, text/plain, */*",
+      cookie: authCookie,
     },
-  );
+  });
 
   return await res.json();
 }
