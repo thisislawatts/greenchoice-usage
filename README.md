@@ -2,6 +2,8 @@
 
 ## Overview
 
+>![Short demo of the output when running this script. The final output is: Getting GreenChoice usage for 2024-07-21. Yesterday we spent € 5,45 on electricity and gas. 📈 This is more than the day before (€ 4,84)](docs/demo.gif)
+
 This script automates the process of logging into the GreenChoice website, extracting consumption data for electricity and gas, and comparing costs against yesterdays data.
 
 ## Prerequisites
